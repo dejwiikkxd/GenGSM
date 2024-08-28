@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSM Power - O nás</title>
+    <link href="./styles/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="navbar-brand">GSM Power</a>
+        <div>
+            <button onclick="window.location.href='index.html'" class="nav-btn">Domů</button>
+            <button onclick="window.location.href='info.html'" class="nav-btn">Služby</button>
+            <button onclick="window.location.href='contact.html'" class="nav-btn nav-btn-active">Kontakt</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-form-section">
+            <div class="contact-form">
+                <div class="contact-info">
+                    <h3>Kontaktní údaje</h3>
+                    <p>Adresa: Preslova 63, 602 00 Brno</p>
+                    <p>Email: info@gsmpower.cz</p>
+                    <p>Telefon: +420 734 363 636</p>
+                    <p>IČO: 29277604</p>
+                </div>
+                <form action="mailto:info@gsm-power.cz" method="post" enctype="text/plain">
+                    <h3>Zaujali jsme vás? Ozvěte se!</h3>
+                    <input type="text" name="name" placeholder="Jméno" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="phone" placeholder="Telefon" required>
+                    <textarea name="message" placeholder="Vaše zpráva" rows="5" required></textarea>
+                    <button type="submit">Odeslat</button>
+                </form>
+            </div>
+            <div class="contact-map-div">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.1125354467317!2d16.567379988193487!3d49.19842470293395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712941ff1df389b%3A0xe5fbcfb9c210e0d!2sGsm%20Power%20Communication%20S.r.o.!5e0!3m2!1scs!2scz!4v1724847332721!5m2!1scs!2scz"
+                    class="googlemap" zoom="16" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+        <section class="contact-map-section">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.1125354467317!2d16.567379988193487!3d49.19842470293395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712941ff1df389b%3A0xe5fbcfb9c210e0d!2sGsm%20Power%20Communication%20S.r.o.!5e0!3m2!1scs!2scz!4v1724847332721!5m2!1scs!2scz"
+                    class="googlemap" frameborder="0" zoom="16" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <footer>
+            <p>GSM Power Communications s.r.o. 2024</p>
+        </footer>
+    </main>
+</body>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyHYbQ6bLLTN88YM9K2XiHGZZO-8jhuEc&callback=console.debug&libraries=maps,marker&v=beta"></script>
+
+</html>
