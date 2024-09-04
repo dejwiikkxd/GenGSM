@@ -358,6 +358,25 @@ form h3{
   transform: scale(1.05);
   margin-top: 0.8rem;
 }
+.services-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.services-btn:hover {
+  border: 2px solid white;
+  background-color: var(--color-blue);
+  color: white;
+  transform: scale(1.05);
+  margin-top: 0.8rem;
+}
 
 
 /* Info Article */
@@ -404,6 +423,113 @@ form h3{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
+
+
+.hero-section h1{
+  font-size: clamp(3rem, 3vw, 3rem);
+}
+.hero-section p{
+  font-size: clamp(1rem, 1.3vw, 2rem);
+}
+
+.hero-content {
+  gap: clamp(1rem, 1vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-btn {
+  background-color: var(--color-orange);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.hero-btn:hover {
+  background-color: var(--color-blue);
+  color: white;
+  transform: scale(1.05);
+}
+
+
+/* About Section */
+.about-section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Services Overview Section */
+.services-overview-section {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.services-overview-section h2, .about-section h2, .contact-section h2, .hero-content h2 {
+  font-size: clamp(3rem, 3vh, 3rem);
+  margin-bottom: 0rem;
+}
+
+.services-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: var(--color-blue);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 320px;
+  margin: 0.5rem 0;
+}
+.service-card-outline {
+  background-color: var(--color-blue);
+  padding: 1rem;
+  border: 2px solid white ;
+  border-radius: 8px;
+  width: 320px;
+  margin: 0.5rem 0;
+}
+
+.service-card h3, .service-card-outline h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.section-content{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: clamp(1rem, 1vw, 2rem);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section-content h1{
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.section-content p{
+  font-size: clamp(1rem, 1.3vw, 2rem);
+}
+
+.index-contact-section{
+  color: black;
+}
+
 
 /* Responsive Adjustments */
 
@@ -461,6 +587,7 @@ form h3{
   
 }
 @media screen and (max-width:560px) {
+  
   .importance-section, .info-section{
     min-height: 130vh;
   }
