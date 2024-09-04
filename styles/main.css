@@ -98,6 +98,16 @@ main {
   width: 100%;
   box-sizing: border-box;
 }
+.index-info-section {
+  scroll-snap-align: center;
+  display: grid;
+  grid-template-columns: 1fr 2vr;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
 .info-section{
   scroll-snap-align: start;
   height: 90vh;
@@ -360,7 +370,7 @@ form h3{
 
 .info-article-title {
   font-size: clamp(1.5rem, 2vw, 2rem);
-  font-weight: 500;
+  font-weight: 700;
 
   text-align: center;
 }
@@ -368,6 +378,12 @@ form h3{
 .info-article-content h2 {
   font-size: clamp(1rem, 2vw, 2rem);
   color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.index-info-content h2 {
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: black;
   text-align: center;
   padding: 1rem;
 }
@@ -386,8 +402,7 @@ form h3{
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
 /* Responsive Adjustments */
@@ -434,6 +449,14 @@ form h3{
   }
   .lil-card {
     font-size: 1rem;
+    width: 100%;
+    margin: 0;
+    border-radius: none;
+    border:2px solid white;
+    border-top: none;
+  }
+  .info-grid{
+    grid-template-columns: repeat(1, minmax(375px, 1fr));
   }
   
 }
