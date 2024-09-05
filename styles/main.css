@@ -81,6 +81,8 @@ body {
 
 /* Main */
 main {
+  scroll-behavior: smooth;
+  transition: scroll 3s ease-in-out;
   max-width: 100%;
   scroll-snap-type: y mandatory; /* Snap type for smoother scrolling */
   overflow-y: auto;
@@ -502,13 +504,13 @@ form h3{
   padding: 1rem;
   border: 2px solid white ;
   border-radius: 8px;
-  width: 320px;
+  width: 340px;
   margin: 0.5rem 0;
 }
 
 .service-card h3, .service-card-outline h3 {
   margin-top: 0;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.6rem,2rem);
 }
 .section-content{
   display: flex;
@@ -526,9 +528,26 @@ form h3{
   font-size: clamp(1rem, 1.3vw, 2rem);
 }
 
-.index-contact-section{
+.black{
   color: black;
 }
+
+
+
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+
+
 
 
 /* Responsive Adjustments */
@@ -552,7 +571,7 @@ form h3{
 }
 @media screen and (max-width: 1088px) {
   .section {
-    min-height: 90vh;
+    min-height: 100vh;
   }
   .info-desc, .info-grid {
     padding: 1rem;
@@ -587,7 +606,9 @@ form h3{
   
 }
 @media screen and (max-width:560px) {
-  
+  .info-article{
+    gap: 0vw;
+  }
   .importance-section, .info-section{
     min-height: 130vh;
   }
