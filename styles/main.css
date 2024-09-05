@@ -617,8 +617,11 @@ form h3 {
   .section {
     min-height: 100vh;
   }
-  .info-desc,
-  .info-grid {
+  .info-desc {
+    padding: 1rem;
+    padding-bottom: 0;
+  }
+  .info-grid{
     padding: 1rem;
   }
 }
