@@ -1,11 +1,11 @@
 /* Importing a new font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
   --color-orange: #ffa90e;
   --color-blue: #6366f1;
   --btn-color-blue: #2563eb;
-  --font-family: 'Poppins', sans-serif;
+  --font-family: "Poppins", sans-serif;
 }
 
 /* Basic Resets and Global Styles */
@@ -13,10 +13,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-    font-family: var(--font-family);
+  font-family: var(--font-family);
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overflow-x: hidden;
 }
@@ -31,14 +32,14 @@ body {
 .navbar {
   background-color: var(--color-orange);
   padding: 1rem 1rem;
-  font-size: 2rem; 
+  font-size: 2rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar div{
+.navbar div {
   display: flex;
   column-gap: 10px;
 }
@@ -54,7 +55,8 @@ body {
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.nav-btn:hover, .nav-btn-active {
+.nav-btn:hover,
+.nav-btn-active {
   background-color: var(--color-blue);
   transform: scale(1.1);
 }
@@ -63,7 +65,7 @@ body {
   background-color: var(--color-blue);
 }
 
-.nav-btn-contact{
+.nav-btn-contact {
   font-weight: 500;
   background-color: white;
   color: var(--btn-color-blue);
@@ -74,7 +76,7 @@ body {
   color: white;
 }
 
-.navbar-brand{
+.navbar-brand {
   color: white;
   text-decoration: none;
 }
@@ -110,12 +112,12 @@ main {
   width: 100%;
   box-sizing: border-box;
 }
-.info-section{
+.info-section {
   scroll-snap-align: start;
   height: 90vh;
 }
 
-.contact-form-section{
+.contact-form-section {
   scroll-snap-align: start;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -127,12 +129,12 @@ main {
   box-sizing: border-box;
 }
 
-.contact-map-section{
+.contact-map-section {
   scroll-snap-align: start;
   height: 90vh;
   padding: 2rem;
 }
-.contact-map-div{
+.contact-map-div {
   scroll-snap-align: start;
   height: 100%;
   padding: 1.5rem;
@@ -145,8 +147,6 @@ main {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-
-
 /* Background Colors */
 .bg-orange {
   background-color: var(--color-orange);
@@ -156,7 +156,6 @@ main {
   background-color: var(--color-blue);
   color: white;
   padding: 1rem;
-
 }
 
 /* Footer */
@@ -169,19 +168,19 @@ footer {
   justify-content: center;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 1.5vh;
 }
 
-form h3{
+form h3 {
   color: black;
   text-align: center;
 }
 
 /* Contact Form */
-.contact-info{
+.contact-info {
   color: black;
 }
 
@@ -196,7 +195,8 @@ form h3{
   color: white;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   border: 2px solid var(--color-blue);
   border-radius: 5px;
   padding: 0.75rem;
@@ -221,17 +221,19 @@ form h3{
 }
 
 /* Nové třídy pro sekce */
-.why-measure-section, .measurement-section, .contact-section {
+.why-measure-section,
+.measurement-section,
+.contact-section {
   scroll-snap-align: center;
   padding: 2rem;
   color: white;
 }
 
- .warning-section {
+.warning-section {
   scroll-snap-align: center;
   color: black;
 }
-.importance-section{
+.importance-section {
   scroll-snap-align: start;
   color: black;
 }
@@ -266,7 +268,6 @@ form h3{
   color: black;
   list-style: none;
 }
-
 
 .info-list ul {
   position: relative;
@@ -380,7 +381,6 @@ form h3{
   margin-top: 0.8rem;
 }
 
-
 /* Info Article */
 .info-article {
   display: flex;
@@ -426,13 +426,45 @@ form h3{
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
-
-.hero-section h1{
+.hero-section h1 {
   font-size: clamp(3rem, 3vw, 3rem);
 }
-.hero-section p{
+.hero-section p {
   font-size: clamp(1rem, 1.3vw, 2rem);
 }
+
+
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-image: url('/images/tower_landscape.jpg'); /* Replace with your image path */
+    background-size: cover; /* Make sure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Ensure text is above the background */
+    color: white; /* Adjust text color for visibility */
+    text-align: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Dark overlay to improve text readability */
+    z-index: 0;
+}
+
+
 
 .hero-content {
   gap: clamp(1rem, 1vw, 2rem);
@@ -445,7 +477,7 @@ form h3{
 }
 
 .hero-btn {
-  background-color: var(--color-orange);
+  background-color: var(--color-blue);
   color: #fff;
   padding: 0.75rem 1.5rem;
   border: 1px;
@@ -456,11 +488,10 @@ form h3{
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .hero-btn:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-orange);
   color: white;
   transform: scale(1.05);
 }
-
 
 /* About Section */
 .about-section {
@@ -480,8 +511,11 @@ form h3{
   color: #fff;
 }
 
-.services-overview-section h2, .about-section h2, .contact-section h2, .hero-content h2 {
-  font-size: clamp(3rem, 3vh, 3rem);
+.services-overview-section h2,
+.about-section h2,
+.contact-section h2,
+.hero-content h2 {
+  font-size: clamp(3rem, 3vw, 3rem);
   margin-bottom: 0rem;
 }
 
@@ -502,17 +536,18 @@ form h3{
 .service-card-outline {
   background-color: var(--color-blue);
   padding: 1rem;
-  border: 2px solid white ;
+  border: 2px solid white;
   border-radius: 8px;
   width: 340px;
   margin: 0.5rem 0;
 }
 
-.service-card h3, .service-card-outline h3 {
+.service-card h3,
+.service-card-outline h3 {
   margin-top: 0;
-  font-size: clamp(1.5rem, 1.6rem,2rem);
+  font-size: clamp(1.5rem, 1.6vw, 2rem);
 }
-.section-content{
+.section-content {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -521,19 +556,16 @@ form h3{
   align-items: center;
   text-align: center;
 }
-.section-content h1{
+.section-content h1 {
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
-.section-content p{
+.section-content p {
   font-size: clamp(1rem, 1.3vw, 2rem);
 }
 
-.black{
+.black {
   color: black;
 }
-
-
-
 
 /* Hide scrollbar for Chrome, Safari, and Opera */
 *::-webkit-scrollbar {
@@ -546,25 +578,37 @@ form h3{
   -ms-overflow-style: none; /* IE and Edge */
 }
 
+.thank-you-message {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: -4rem;
+  color: black;
+  font-size: clamp(2rem, 3vw, 3rem);
+  text-align: center;
+  margin-top: 4rem;
+}
 
-
-
+.thank-you-message i {
+  font-size: 5rem;
+  margin-top: 1rem;
+  color: green;
+}
 
 /* Responsive Adjustments */
 
-@media screen and (min-width: 767px ){
-
-    .contact-map-section{
+@media screen and (min-width: 868px) {
+  .contact-map-section {
     display: none;
   }
   .info-article-content {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  height: 75%;
-  margin: 1rem auto;
-}
-  .info-section{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    height: 75%;
+    margin: 1rem auto;
+  }
+  .info-section {
     height: 90vh;
     place-items: center;
   }
@@ -573,21 +617,25 @@ form h3{
   .section {
     min-height: 100vh;
   }
-  .info-desc, .info-grid {
+  .info-desc,
+  .info-grid {
     padding: 1rem;
   }
 }
 
-@media screen and (max-width: 768px) {
-    .contact-page-section{
-      flex-direction: column;
-    }
-    .contact-form-section{
-      grid-template-columns: auto;
-    }
-    .contact-map-div{
-      display: none;
-    }
+@media screen and (max-width: 868px) {
+  main {
+    scroll-snap-type: y proximity;
+  }
+  .contact-page-section {
+    flex-direction: column;
+  }
+  .contact-form-section {
+    grid-template-columns: auto;
+  }
+  .contact-map-div {
+    display: none;
+  }
 
   .info-title {
     font-size: 1.5rem;
@@ -597,22 +645,28 @@ form h3{
     width: 100%;
     margin: 0;
     border-radius: none;
-    border:2px solid white;
+    border: 2px solid white;
     border-top: none;
   }
-  .info-grid{
+  .info-grid {
     grid-template-columns: repeat(1, minmax(375px, 1fr));
   }
-  
 }
-@media screen and (max-width:560px) {
-  .info-article{
+@media screen and (max-width: 560px) {
+  .thank-you-message{
+    margin-inline: 0;
+  }
+  .info-article {
     gap: 0vw;
   }
-  .importance-section, .info-section{
+  .importance-section,
+  .info-section {
     min-height: 130vh;
   }
-  .why-measure-section, .measurement-section,.contact-section, .warning-section{
+  .why-measure-section,
+  .measurement-section,
+  .contact-section,
+  .warning-section {
     min-height: 100vh;
   }
   .navbar-brand {

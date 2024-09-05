@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSM Power - O nás</title>
     <link href="./styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -28,14 +29,18 @@
                     <p>Telefon: +420 734 363 636</p>
                     <p>IČO: 29277604</p>
                 </div>
-                <form action="mailto:info@gsm-power.cz" method="post" enctype="text/plain">
+                <form id="contact-form">
                     <h3>Zaujali jsme vás? Ozvěte se!</h3>
-                    <input type="text" name="name" placeholder="Jméno" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="tel" name="phone" placeholder="Telefon" required>
-                    <textarea name="message" placeholder="Vaše zpráva" rows="5" required></textarea>
+                    <input type="text" id="name" name="name" placeholder="Jméno" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Telefon" required>
+                    <textarea id="message" name="message" placeholder="Vaše zpráva" rows="5" required></textarea>
                     <button type="submit">Odeslat</button>
                 </form>
+                <div id="thankYouMessage" class="thank-you-message">
+                    <p>Děkujeme, ozveme se Vám!</p>
+                    <i class="fas fa-check-circle"></i>
+                </div>
             </div>
             <div class="contact-map-div">
                 <iframe
@@ -54,7 +59,44 @@
         </footer>
     </main>
 </body>
-<script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyHYbQ6bLLTN88YM9K2XiHGZZO-8jhuEc&callback=console.debug&libraries=maps,marker&v=beta"></script>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init({
+            publicKey: "dUwBTQKPIuaYHdMGU",
+        });
+    })();
+</script>
+
+<script>
+
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        // Send email
+        emailjs.send('mail-msg-id', 'default_template', {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+        })
+        .then(function (response) {
+                // Hide the form
+                document.getElementById('contact-form').style.display = 'none';
+                // Show the thank you message
+                document.getElementById('thankYouMessage').style.display = 'flex';
+                console.log('Sent successfully:', response);
+            
+            document.getElementById('contact-form').reset();
+            } // Reset form fields
+    )});
+</script>
 </html>
